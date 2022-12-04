@@ -22,5 +22,10 @@ contextBridge.exposeInMainWorld('electron', {
       return ipcRenderer.sendSync(CONSTANTS.OPERATION_BULKUPLOAD, data, val);
     },
   },
+  scanner: {
+    openScanner() {
+      return ipcRenderer.sendSync(CONSTANTS.OPEN_SCANNER);
+    },
+  },
   // Any other methods you want to expose in the window object.
 });

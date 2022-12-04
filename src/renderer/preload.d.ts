@@ -14,6 +14,9 @@ declare global {
       bulkupload: {
         operation: (value: boolean, payload: any) => void;
       };
+      scanner: {
+        openScanner: () => void;
+      };
     };
   }
 }
