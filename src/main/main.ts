@@ -34,9 +34,9 @@ class AppUpdater {
 let mainWindow: BrowserWindow | null = null;
 
 // send logs to frontend
-ipcMain.on(CONSTANTS.ELECTRON_LOGS, async (event) => {
-  event.returnValue = 'ehlo';
-});
+// ipcMain.on(CONSTANTS.ELECTRON_LOGS, async (event) => {
+//   event.returnValue = 'ehlo';
+// });
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');

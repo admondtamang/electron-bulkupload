@@ -24,11 +24,21 @@ const Hello = () => {
     // or
     console.log(window.electron.store.get('foo'));
     console.log(window.electron.core.logs());
-    window.electron.bulkupload.operation(true, data);
+    window.electron.dms.bulkupload(true, data);
+  };
+
+  const handleDms = () => {
+    window.electron.dms.openDms();
+  };
+
+  const openScanner = () => {
+    window.electron.dms.openScanner();
   };
 
   return (
     <div>
+      <button onClick={handleDms}>Open DMS Application</button>
+      <button onClick={openScanner}>Open Scanner</button>
       <form
         onSubmit={handleSubmit(onSubmit)}
         style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}

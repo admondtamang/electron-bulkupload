@@ -10,12 +10,10 @@ declare global {
         set: (key: string, val: any) => void;
         // any other methods you've defined...
       };
-      // bulkupload start and end
-      bulkupload: {
-        operation: (value: boolean, payload: any) => void;
-      };
-      scanner: {
+      dms: {
+        bulkupload: (value: boolean, payload: any) => void;
         openScanner: () => void;
+        openDms: () => void;
       };
     };
   }

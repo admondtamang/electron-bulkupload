@@ -17,14 +17,15 @@ contextBridge.exposeInMainWorld('electron', {
     },
     // Other method you want to add like has(), reset(), etc.
   },
-  bulkupload: {
-    operation(data: boolean, val: any) {
-      return ipcRenderer.sendSync(CONSTANTS.OPERATION_BULKUPLOAD, data, val);
+  dms: {
+    bulkupload(data: boolean, val: any) {
+      return ipcRenderer.invoke(CONSTANTS.OPERATION_BULKUPLOAD, data, val);
     },
-  },
-  scanner: {
     openScanner() {
-      return ipcRenderer.sendSync(CONSTANTS.OPEN_SCANNER);
+      return ipcRenderer.invoke(CONSTANTS.OPEN_SCANNER);
+    },
+    openDms() {
+      return ipcRenderer.invoke(CONSTANTS.LAUNCH_DMS);
     },
   },
   // Any other methods you want to expose in the window object.
